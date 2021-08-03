@@ -6,8 +6,8 @@ import { TestComponent } from './test/test.component';
 import { TestService } from './test/test.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
-import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
-import { MatInput, MatInputModule } from '@angular/material/input'
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input'
 
 @NgModule({
   declarations: [
