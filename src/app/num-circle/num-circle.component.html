@@ -3,8 +3,6 @@
     <mat-label>Progress</mat-label>
     <input [(ngModel)]="zahl" matInput type="number" placeholder="Zahl">
   </mat-form-field>
-<section>
-    <mat-progress-spinner color="primary" mode="determinate" [value]="zahl"></mat-progress-spinner>
-    <mat-progress-spinner color="accent" mode="determinate" [value]="zahl-100"></mat-progress-spinner>
-    <mat-progress-spinner color="warn" mode="determinate" [value]="zahl-200"></mat-progress-spinner>
-</section>
+<mat-progress-spinner color="primary" mode="determinate" [value]="zahl"></mat-progress-spinner>
+<mat-progress-spinner color="accent" mode="determinate" [value]="zahl-100"></mat-progress-spinner>
+<mat-progress-spinner color="warn" mode="determinate" [value]="zahl-200"></mat-progress-spinner>
