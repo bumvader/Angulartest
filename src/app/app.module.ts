@@ -29,6 +29,7 @@ import { NumCircleComponent } from './num-circle/num-circle.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatButtonToggleModule,
     MatProgressBarModule,
     MatGridListModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatRadioModule
   ],
   providers: [
     TestService
