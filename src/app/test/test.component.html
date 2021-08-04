@@ -1,0 +1,14 @@
+<div class="container">
+    <form (ngSubmit) ="submit()">
+       <div class="form-group">
+            <label for="minage">Älter als 12</label>
+            <input type="checkbox"  name="checkbox1" class="checkbox"  (change)="onChange()" [(ngModel)]="checked">
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="maxage">Jünger als 20</label>
+            <input type="checkbox" name="checkbox2" class="checkbox" >
+        </div>
+        <button  class="btn btn-primary" type="submit">hallo</button>
+    </form>
+</div>

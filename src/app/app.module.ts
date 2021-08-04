@@ -19,8 +19,8 @@ import { TabsComponent } from './tabs/tabs.component';
 import { CircleComponent } from './circle/circle.component';
 import { FunDingComponent } from './fun-ding/fun-ding.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { FormsModule } from '@angular/forms';
 import { MatRippleModule } from '@angular/material/core';
+import { FormsModule, FormBuilder, FormGroup, ReactiveFormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 
 @NgModule({
@@ -46,7 +46,9 @@ import { MatRippleModule } from '@angular/material/core';
     MatCheckboxModule,
     MatProgressSpinnerModule,
     FormsModule,
-    MatRippleModule
+    MatRippleModule,
+    MatCheckboxModule,
+    ReactiveFormsModule
   ],
   providers: [
     TestService

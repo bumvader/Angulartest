@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TestService } from './test.service';
+import { MatCheckbox, MatCheckboxChange } from '@angular/material/checkbox';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -8,27 +9,15 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['test.component.css']
 })
 
-export class TestComponent implements OnInit {
+export class TestComponent {
 
-  loginForm!: FormGroup;
-  emailRegx = /^(([^<>+()\[\]\\.,;:\s@"-#$%&=]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}))$/;
+  checked = false;
+  submit(){
+    console.log("hoho" );
 
-  constructor(
-    private formBuilder: FormBuilder
-  ) { }
-
-  ngOnInit() {
-    this.loginForm = this.formBuilder.group({
-      email: [null, [Validators.required, Validators.pattern(this.emailRegx)]],
-      password: [null, Validators.required]
-    });
   }
-
-  submit() {
-    if (!this.loginForm.valid) {
-      return;
-    }
-    console.log(this.loginForm.value);
+  onChange(){
+    console.log(this.checked);
   }
 
 }
