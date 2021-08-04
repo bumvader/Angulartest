@@ -1,14 +1,18 @@
 <div class="container">
-    <form (ngSubmit) ="submit()">
-       <div class="form-group">
-            <label for="minage">Älter als 12</label>
-            <input type="checkbox"  name="checkbox1" class="checkbox"  (change)="onChange()" [(ngModel)]="checked">
+    <mat-form-field (ngSubmit) ="submit()" >
+       <div class="form-group" >
+            <mat-checkbox name="checkbox" class="checkbox" (change)="onChange()" [(ngModel)]="checked">älter als 12</mat-checkbox>
         </div>
         <pre></pre>
         <div class="form-group">
-            <label for="maxage">Jünger als 20</label>
-            <input type="checkbox" name="checkbox2" class="checkbox" >
+            <mat-checkbox name="checkbox2" class="checkbox" (change)="onChange2()" [(ngModel)]="checked2">jünger als 20</mat-checkbox>
         </div>
-        <button  class="btn btn-primary" type="submit">hallo</button>
-    </form>
+        <mat-form-field appearance="legacy">
+            <mat-label>Legacy form field</mat-label>
+            <input matInput placeholder="Placeholder" [(ngModel)]="text" (change)="buttonChange()">
+            <mat-icon matSuffix>pls</mat-icon>
+            <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+        <button  content class="btn btn-primary" type="submit">hallo</button>
+    </mat-form-field>
 </div>

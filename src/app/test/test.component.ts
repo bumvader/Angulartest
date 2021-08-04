@@ -10,14 +10,24 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 
 export class TestComponent {
-
   checked = false;
+  checked2 = false;
+  text :string;
   submit(){
-    console.log("hoho" );
 
+    console.log(this.text);
+    if(this.checked == true && this.checked2 == true){
+      console.log("teenager");
+    }else{
+      console.log("nicht teenager");
+    }
   }
   onChange(){
     console.log(this.checked);
   }
-
+  onChange2(){
+    console.log(this.checked2);
+  }
+  buttonChange(){
+  }
 }
