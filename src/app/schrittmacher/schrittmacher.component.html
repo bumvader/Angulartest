@@ -1,6 +1,19 @@
-<button mat-raised-button (click)="isPlus = !isPlus" id="toggle-linear">
-  {{!isPlus ? 'mach Plus' : 'mach Minus'}}
-</button>
+
+ <mat-button-toggle-group #group="matButtonToggleGroup" aria-required="#group">
+  <mat-button-toggle value="+" aria-label="Plus">
+    +
+  </mat-button-toggle>
+  <mat-button-toggle value="-" aria-label="Minus">
+    -
+  </mat-button-toggle>
+  <mat-button-toggle value="*" aria-label="Mal">
+    *
+  </mat-button-toggle>
+  <mat-button-toggle value="/" aria-label="Dividieren">
+    /
+  </mat-button-toggle>
+</mat-button-toggle-group>
+
 <mat-stepper [linear]="true" #stepper>
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
@@ -10,7 +23,7 @@
           <input [(ngModel)]="ersteZahl" matInput type="number" placeholder="Zahl" formControlName="firstCtrl" required>
         </mat-form-field>
         <div>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperNext (click)="progressNext()">Next</button>
         </div>
       </form>
     </mat-step>
@@ -22,18 +35,21 @@
                  required>
         </mat-form-field>
         <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperPrevious (click)="progressBack()">Back</button>
+          <button mat-button matStepperNext (click)="progressNext()" >Next</button>
         </div>
       </form>
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
-      <p *ngIf="isPlus" [textContent]="beide()"></p>
-      <p *ngIf="!isPlus" [textContent]="keine()"></p>
+      <p *ngIf="group.value == '+'">{{beide()}}</p>
+      <p *ngIf="group.value == '-'">{{keine()}}</p>
+      <p *ngIf="group.value == '*'">{{times()}}</p>
+      <p *ngIf="group.value == '/'">{{divided()}}</p>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button matStepperPrevious (click)="progressBack()">Back</button>
+        <button mat-button (click)="stepper.reset(); progressReset()">Reset</button>
       </div>
     </mat-step>
   </mat-stepper>
+  <mat-progress-bar id="progbar" mode="determinate" color="accent" [value]="_progress"></mat-progress-bar>

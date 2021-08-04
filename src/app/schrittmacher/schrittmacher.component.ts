@@ -8,16 +8,32 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class SchrittmacherComponent implements OnInit {
 
-  isPlus = true;
+  _progress = 0;
 
   ersteZahl: number;
   zweiteZahl: number;
+
+  progressNext(){
+    this._progress += 50;
+  }
+  progressBack(){
+    this._progress -=50;
+  }
+  progressReset(){
+    this._progress = 0;
+  }
 
   beide(){
     return +this.ersteZahl + +this.zweiteZahl;
   }
   keine(){
     return +this.ersteZahl - +this.zweiteZahl;
+  }
+  times(){
+    return +this.ersteZahl * +this.zweiteZahl;
+  }
+  divided(){
+    return +this.ersteZahl / +this.zweiteZahl;
   }
 
   firstFormGroup: FormGroup;

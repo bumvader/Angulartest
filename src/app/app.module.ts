@@ -23,6 +23,8 @@ import { MatRippleModule } from '@angular/material/core';
 import { FormsModule, FormBuilder, FormGroup, ReactiveFormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SchrittmacherComponent } from './schrittmacher/schrittmacher.component';
 import { MatStepperModule } from '@angular/material/stepper';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 @NgModule({
@@ -52,7 +54,9 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatRippleModule,
     MatCheckboxModule,
     ReactiveFormsModule,
-    MatStepperModule
+    MatStepperModule,
+    MatButtonToggleModule,
+    MatProgressBarModule
   ],
   providers: [
     TestService
