@@ -25,6 +25,7 @@ import { SchrittmacherComponent } from './schrittmacher/schrittmacher.component'
 import { MatStepperModule } from '@angular/material/stepper';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { NumCircleComponent } from './num-circle/num-circle.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     TabsComponent,
     CircleComponent,
     FunDingComponent,
-    SchrittmacherComponent
+    SchrittmacherComponent,
+    NumCircleComponent
   ],
   imports: [
     BrowserModule,
