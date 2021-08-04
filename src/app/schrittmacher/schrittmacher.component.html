@@ -1,10 +1,13 @@
+<button mat-raised-button (click)="isPlus = !isPlus" id="toggle-linear">
+  {{!isPlus ? 'mach Plus' : 'mach Minus'}}
+</button>
 <mat-stepper [linear]="true" #stepper>
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
         <ng-template matStepLabel>Sag eine zahl</ng-template>
         <mat-form-field appearance="fill">
           <mat-label>Zahl</mat-label>
-          <input [(ngModel)]="ersteZahl" matInput placeholder="Zahl" formControlName="firstCtrl" required>
+          <input [(ngModel)]="ersteZahl" matInput type="number" placeholder="Zahl" formControlName="firstCtrl" required>
         </mat-form-field>
         <div>
           <button mat-button matStepperNext>Next</button>
@@ -15,7 +18,7 @@
       <form [formGroup]="secondFormGroup">
         <mat-form-field appearance="fill">
           <mat-label>Zahl</mat-label>
-          <input [(ngModel)]="zweiteZahl" matInput formControlName="secondCtrl" placeholder="Zahl"
+          <input [(ngModel)]="zweiteZahl" matInput type="number" formControlName="secondCtrl" placeholder="Zahl"
                  required>
         </mat-form-field>
         <div>
@@ -26,7 +29,8 @@
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
-      <p [textContent]="beide()"></p>
+      <p *ngIf="isPlus" [textContent]="beide()"></p>
+      <p *ngIf="!isPlus" [textContent]="keine()"></p>
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="stepper.reset()">Reset</button>
