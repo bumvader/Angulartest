@@ -21,6 +21,8 @@ import { FunDingComponent } from './fun-ding/fun-ding.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatRippleModule } from '@angular/material/core';
 import { FormsModule, FormBuilder, FormGroup, ReactiveFormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { SchrittmacherComponent } from './schrittmacher/schrittmacher.component';
+import { MatStepperModule } from '@angular/material/stepper';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { FormsModule, FormBuilder, FormGroup, ReactiveFormsModule, NG_VALUE_ACCE
     NavbarComponent,
     TabsComponent,
     CircleComponent,
-    FunDingComponent
+    FunDingComponent,
+    SchrittmacherComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ import { FormsModule, FormBuilder, FormGroup, ReactiveFormsModule, NG_VALUE_ACCE
     FormsModule,
     MatRippleModule,
     MatCheckboxModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatStepperModule
   ],
   providers: [
     TestService
