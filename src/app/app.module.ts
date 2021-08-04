@@ -30,6 +30,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatProgressBarModule,
     MatGridListModule,
     MatSnackBarModule,
-    MatRadioModule
+    MatRadioModule,
+    MatCardModule
   ],
   providers: [
     TestService

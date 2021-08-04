@@ -19,53 +19,89 @@
     <mat-stepper orientation="vertical" #stepper>
         <mat-step [stepControl]="firstFormGroup">
             <form [formGroup]="firstFormGroup">
-                <ng-template matStepLabel>name</ng-template>
-                <mat-form-field appearence="fill">
-                    <mat-label>Name</mat-label>
-                    <div>
-                        <input matInput placeholder="name" formControlName="firstCtrl" required [(ngModel)]="stepName">
-                    </div>
-                    <div>
-                        <mat-checkbox [ngModelOptions]="{standalone: true}" name="erdch" class="checkbox"  [(ngModel)]="checkedx">erdbeer</mat-checkbox>
+                <ng-template matStepLabel>Website Paket</ng-template>
+                <div>
+                        <mat-checkbox matInput [ngModelOptions]="{standalone: true}" name="simplch" class="checkbox"  [(ngModel)]="checkedx">simpl</mat-checkbox>
                     </div>
                     <div> 
-                        <mat-checkbox [ngModelOptions]="{standalone: true}" name="banch" class="checkbox"  [(ngModel)]="checkedy">bannane</mat-checkbox>
+                        <mat-checkbox matInput [ngModelOptions]="{standalone: true}" name="komplexch" class="checkbox"  [(ngModel)]="checkedy">komplex</mat-checkbox>
                     </div>
                     <div>
-                        <mat-checkbox [ngModelOptions]="{standalone: true}" name="vanch" class="checkbox"  [(ngModel)]="checkedz">vannile</mat-checkbox>
+                        <mat-checkbox matInput [ngModelOptions]="{standalone: true}" name="gaych" class="checkbox"  [(ngModel)]="checkedz">gaygaygay</mat-checkbox>
                     </div>
-                </mat-form-field>
+                
                 <div>
-                    <button mat-button matStepperNext>next</button>
+                    <button mat-button matStepperNext (click)="shake()">next</button>
                 </div>
             </form>
         </mat-step>
         <mat-step [stepControl]="secondFormGroup">
             <form [formGroup]="secondFormGroup">
-                <ng-template matStepLabel>passwort</ng-template>
-                <mat-form-field appearence="fill">
-                    <mat-label>passwort</mat-label>
-                    <input matInput placeholder="passwort" formControlName="secondCtrl" required [(ngModel)]="stepPas">
-                </mat-form-field>
+            <mat-card *ngIf="a">
+                <mat-card-title>Basic Paket</mat-card-title>
+                <mat-card-content>
+                    <br>
+                    <p> 
+                        <li>Informationen</li>
+                        <li>navbar</li>
+                        <li>immpresum</li>
+                        <br>
+                        Preis: 2 BigMac
+                    </p>
+                </mat-card-content>
+            </mat-card>
+            <mat-card *ngIf="b">
+                <mat-card-title>Delux Paket</mat-card-title>
+                <mat-card-content>
+                    <br>
+                    <p> 
+                        <li>Informationen</li>
+                        <li>navbar</li>
+                        <li>immpresum</li>
+                        <li>login</li>
+                        <li>datenbank</li>
+                        <br>
+                        Preis: 3 Saftige Handschläge
+                    </p>
+                </mat-card-content>
+            </mat-card>
+            <mat-card *ngIf="c">
+                <mat-card-title>Mega Ultra Delux Paket</mat-card-title>
+                <mat-card-content>
+                    <br>
+                    <p> 
+                        <li>Informationen</li>
+                        <li>navbar</li>
+                        <li>immpresum</li>
+                        <li>login</li>
+                        <li>datenbank</li>
+                        <li>prostituirte</li>
+                        <li>1 schwarzes loch</li>
+                        <li>hentai</li>
+                        <br>
+                        Preis: All In
+                    </p>
+                </mat-card-content>
+            </mat-card>
                 <div>
-                    <button mat-button matStepperNext (click)=shake()>next</button>
-                    <button mat-button matStepperPrevious>back</button>
+                    <button mat-button matStepperNext>next</button>
+                    <button mat-button matStepperPrevious (click)="reset()">back</button>
                 </div>
             </form>
         </mat-step>
-        <mat-step>
-            <ng-template matStepLabel>Done</ng-template>
-            <mat-radio-group>
-                <mat-radio-button [ngModelOptions]="{standalone: true}" [checked]="a" ngDefaultControl [(ngModel)]="a" value="1" name="erdbeershake" class="checkbox"  [(ngModel)]="checkedErdbeer">ErdbeerShake</mat-radio-button>
-                <mat-radio-button [ngModelOptions]="{standalone: true}" [checked]="b" ngDefaultControl [(ngModel)]="b" value="2" name="bannanenshake" class="checkbox"  [(ngModel)]="checkedBannane">BannanenShake</mat-radio-button>
-                <mat-radio-button [ngModelOptions]="{standalone: true}" [checked]="c" ngDefaultControl [(ngModel)]="c" value="3" name="vanilleshake" class="checkbox"  [(ngModel)]="checkedVanille">VanilleShake</mat-radio-button>
-            </mat-radio-group>  
-            <div *ngIf="checkedx == true && checkedy == true"><h1>x&y</h1></div>
-            <p>passwort: {{stepName}}</p>
-            <div>
-              <button mat-button matStepperPrevious>Back</button>
-              <button mat-button (click)="stepper.reset()">Reset</button>
-            </div>
+        <mat-step [stepControl]="thirdFormGroup">
+            <form [formGroup]="thirdFormGroup">
+                <ng-template matStepLabel>passwort</ng-template>
+                <mat-form-field appearence="fill">
+                    <mat-label>passwort</mat-label>
+                 <input matInput placeholder="passwort" formControlName="secondCtrl" required [(ngModel)]="stepPas">
+                </mat-form-field>
+                <ng-template matStepLabel>Done</ng-template>      
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button (click)="stepper.reset(); reset()">Reset</button>
+                </div>
+            </form>
           </mat-step>
     </mat-stepper>
     <br><br><br><br><br>

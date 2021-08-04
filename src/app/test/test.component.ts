@@ -33,15 +33,30 @@ export class TestComponent implements OnInit {
   
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
 
   shake(){
+    
     if(this.checkedx == true){
       this.a = true;
-    }else if(this.checkedy ==true){
+    }
+    if(this.checkedy ==true){
       this.b = true;
-    }else if(this.checkedz == true){
+    }
+    if(this.checkedz == true){
       this.c = true;
     }
+
+  }
+  reset(){
+    this.a = false;
+    this.b = false;
+    this.c = false;
+    
+    this.checkedx = false;
+    this.checkedy = false;
+    this.checkedz = false;
+
   }
   submit(){
 
@@ -65,6 +80,9 @@ export class TestComponent implements OnInit {
     })
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
+    })
+    this.thirdFormGroup = this._formBuilder.group({
+      thirdCtrl: ['', Validators.required]
     })
   }
 }
