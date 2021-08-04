@@ -7,19 +7,46 @@ import { TestService } from './test/test.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input'
+import { MatInputModule } from '@angular/material/input';
+import { NavbarComponent } from './navbar/navbar.component'
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { TabsComponent } from './tabs/tabs.component';
+import { CircleComponent } from './circle/circle.component';
+import { FunDingComponent } from './fun-ding/fun-ding.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { FormsModule } from '@angular/forms';
+import { MatRippleModule } from '@angular/material/core';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+    TestComponent,
+    NavbarComponent,
+    TabsComponent,
+    CircleComponent,
+    FunDingComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatSliderModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatTabsModule,
+    MatCheckboxModule,
+    MatProgressSpinnerModule,
+    FormsModule,
+    MatRippleModule
   ],
   providers: [
     TestService
