@@ -9,10 +9,13 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['test.component.css']
 })
 
-export class TestComponent {
+export class TestComponent implements OnInit {
   checked = false;
   checked2 = false;
   text :string;
+  isLinear = false;
+  firstFormControl: FormGroup;
+  secondFormControl: FormGroup;
   submit(){
 
     console.log(this.text);
@@ -27,5 +30,14 @@ export class TestComponent {
   }
   onChange2(){
     console.log(this.checked2);
+  }
+  constructor(private _formBuilder: FormBuilder){}
+  ngOnInit(){
+    this.firstFormControl = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    })
+    this.secondFormControl = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    })
   }
 }

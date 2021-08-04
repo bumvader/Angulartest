@@ -13,7 +13,46 @@
         </mat-form-field>
         <button  mat-raised-button (click)="submit()"> hallo</button>
     </mat-form-field>
+
     <br><br><br><br><br>
-    
+
+    <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+        {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+      </button>
+    <mat-stepper orientation="vertical" #stepper>
+        <mat-step [stepControl]="firstFormControl">
+            <form [formControl]="firstFormControl">
+                <ng-template matStepLabel>name</ng-template>
+                <mat-form-field appearence="fill">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="name" formControlName="firstCtrl" required>
+                </mat-form-field>
+                <div>
+                    <button mat-button matStepperNext>next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormControl">
+            <form [formControl]="secondFormControl">
+                <ng-template matStepLabel>passwort</ng-template>
+                <mat-form-field appearence="fill">
+                    <mat-label>passwort</mat-label>
+                    <input matInput placeholder="passwort" formControlName="secondCtrl" required>
+                </mat-form-field>
+                <div>
+                    <button mat-button matStepperNext>next</button>
+                    <button mat-button matStepperPrevious>back</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            <p>You are now done.</p>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button (click)="stepper.reset()">Reset</button>
+            </div>
+          </mat-step>
+    </mat-stepper>
     <br><br><br><br><br>
 </div>
