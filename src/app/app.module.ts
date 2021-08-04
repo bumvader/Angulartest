@@ -26,6 +26,9 @@ import { MatStepperModule } from '@angular/material/stepper';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { NumCircleComponent } from './num-circle/num-circle.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { SnackbarComponent } from './snackbar/snackbar.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -37,7 +40,8 @@ import { NumCircleComponent } from './num-circle/num-circle.component';
     CircleComponent,
     FunDingComponent,
     SchrittmacherComponent,
-    NumCircleComponent
+    NumCircleComponent,
+    SnackbarComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +62,9 @@ import { NumCircleComponent } from './num-circle/num-circle.component';
     ReactiveFormsModule,
     MatStepperModule,
     MatButtonToggleModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatGridListModule,
+    MatSnackBarModule
   ],
   providers: [
     TestService
