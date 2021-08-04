@@ -28,6 +28,4 @@ export class TestComponent {
   onChange2(){
     console.log(this.checked2);
   }
-  buttonChange(){
-  }
 }

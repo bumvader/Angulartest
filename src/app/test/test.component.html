@@ -7,12 +7,13 @@
         <div class="form-group">
             <mat-checkbox name="checkbox2" class="checkbox" (change)="onChange2()" [(ngModel)]="checked2">jünger als 20</mat-checkbox>
         </div>
-        <mat-form-field appearance="legacy">
+        <mat-form-field appearance="fill">
             <mat-label>Legacy form field</mat-label>
-            <input matInput placeholder="Placeholder" [(ngModel)]="text" (change)="buttonChange()">
-            <mat-icon matSuffix>pls</mat-icon>
-            <mat-hint>Hint</mat-hint>
+            <input matInput placeholder="Placeholder" [(ngModel)]="text">
         </mat-form-field>
-        <button  content class="btn btn-primary" type="submit">hallo</button>
+        <button  mat-raised-button (click)="submit()"> hallo</button>
     </mat-form-field>
+    <br><br><br><br><br>
+    
+    <br><br><br><br><br>
 </div>
