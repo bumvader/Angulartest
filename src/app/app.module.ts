@@ -31,6 +31,8 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCardModule} from '@angular/material/card';
+import {FlexLayoutModule} from "@angular/flex-layout";
+
 
 
 @NgModule({
@@ -68,7 +70,8 @@ import {MatCardModule} from '@angular/material/card';
     MatGridListModule,
     MatSnackBarModule,
     MatRadioModule,
-    MatCardModule
+    MatCardModule,
+    FlexLayoutModule
   ],
   providers: [
     TestService

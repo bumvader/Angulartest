@@ -12,12 +12,8 @@ import { BooleanInput } from '@angular/cdk/coercion';
 })
 
 export class TestComponent implements OnInit {
-  checked = false;
-  checked2 = false;
-  
-  checkedx = false;
-  checkedy = false;
-  checkedz = false;
+ 
+  text: string;
 
   checkedErdbeer = false;
   checkedBannane = false;
@@ -27,52 +23,91 @@ export class TestComponent implements OnInit {
   b : BooleanInput = false;
   c : BooleanInput = false;
 
-  text :string;
-  stepName :string;
-  stepPas :string;
-  
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
 
-  shake(){
-    
-    if(this.checkedx == true){
-      this.a = true;
-    }
-    if(this.checkedy ==true){
-      this.b = true;
-    }
-    if(this.checkedz == true){
-      this.c = true;
-    }
+  num = 1;
+  num2 = 1;
+  num3 = 1;
 
-  }
-  reset(){
-    this.a = false;
-    this.b = false;
-    this.c = false;
-    
-    this.checkedx = false;
-    this.checkedy = false;
-    this.checkedz = false;
+  cardWidth = 200
+  cardHeight = 300
+  cardWidth2 = 200
+  cardHeight2 = 300
+  cardWidth3 = 200
+  cardHeight3 = 300
 
-  }
-  submit(){
+  email: string;
+  pas: string;  
 
-    console.log(this.text);
-    if(this.checked == true && this.checked2 == true){
-      console.log("teenager");
+  select = false;
+  select2=false;
+  select3=false;
+
+  spaket: string;
+  preis: string;
+  paket(){
+    if(this.select == true){
+      this.spaket ="basic"
+      this.preis ="2 BigMac"
+    }else if(this.select2 == true){
+      this.spaket ="delux"
+      this.preis="3 Saftige Handschläge"
     }else{
-      console.log("nicht teenager");
+      this.spaket="mega"
+      this.preis="All In"
     }
   }
-  onChange(){
-    console.log(this.checked);
+  hover(){
+    this.num2 = 1;
+    this.num = 9;
+    this.num3 = 1;
+    this.cardHeight = 330
+    this.cardWidth = 220
+    this.cardHeight2 = 300
+    this.cardWidth2 = 200
+    this.cardHeight3 = 300
+    this.cardWidth3 = 200
+
+    this.select = true;
+    this.select2 = false;
+    this.select3 = false;
+    
+
   }
-  onChange2(){
-    console.log(this.checked2);
+  hover2(){
+    this.num = 1;
+    this.num2 = 9;
+    this.num3 = 1;
+    this.cardHeight = 300
+    this.cardWidth = 200
+    this.cardHeight2 = 330
+    this.cardWidth2 = 220
+    this.cardHeight3 = 300
+    this.cardWidth3 = 200
+
+    this.select = false;
+    this.select2 = true;
+    this.select3 = false;
   }
+  hover3(){
+    this.num = 1;
+    this.num2 = 1;
+    this.num3 = 9;
+    this.cardHeight = 300
+    this.cardWidth = 200
+    this.cardHeight2 = 300
+    this.cardWidth2 = 200
+    this.cardHeight3 = 330
+    this.cardWidth3 = 220
+  
+    this.select = false;
+    this.select2 = false;
+    this.select3 = true;
+  }
+ 
+
   constructor(private _formBuilder: FormBuilder){}
   ngOnInit(){
     this.firstFormGroup = this._formBuilder.group({
