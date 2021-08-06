@@ -14,7 +14,12 @@ export class SchrittmacherComponent implements OnInit {
   zweiteZahl: number;
 
   progressNext(){
-    this._progress += 50;
+    if(this._progress == 50 && this.zweiteZahl != undefined)
+      this._progress += 50;
+    else
+    if(this.ersteZahl != undefined && this._progress == 0)
+      this._progress += 50;
+
   }
   progressBack(){
     this._progress -=50;
